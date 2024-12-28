@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -7,10 +8,15 @@ body {
     background-color: #f9f9f9;
 }
 
+/* Header */
 header {
     background: #2a9d8f;
     color: #fff;
     padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navbar .container {
@@ -39,20 +45,32 @@ header {
     transition: color 0.3s;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a:focus {
     color: #e9c46a;
 }
 
+/* Hero Section */
 .hero {
     background: url('https://via.placeholder.com/1500x600') no-repeat center center/cover;
     color: #fff;
     text-align: center;
     padding: 5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-bottom: 1.5rem;
 }
 
 .btn {
@@ -65,10 +83,12 @@ header {
     transition: background 0.3s;
 }
 
-.btn:hover {
+.btn:hover,
+.btn:focus {
     background: #f4a261;
 }
 
+/* Sections */
 section {
     padding: 3rem 1rem;
 }
@@ -83,8 +103,10 @@ h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     color: #2a9d8f;
+    text-align: center;
 }
 
+/* Projects Section */
 .project-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -92,21 +114,28 @@ h2 {
 }
 
 .project {
-    background: #f4f4f4;
+    background: #fff;
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .project h3 {
     margin-top: 0;
+    color: #264653;
 }
 
-footer {
-    background: #2a9d8f;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
+/* Contact Form */
+form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
 }
 
 .form-group label {
@@ -133,6 +162,53 @@ button {
     transition: background 0.3s;
 }
 
-button:hover {
+button:hover,
+button:focus {
     background: #264653;
+}
+
+/* Footer */
+footer {
+    background: #2a9d8f;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        padding: 0.6rem 1.2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
 }
